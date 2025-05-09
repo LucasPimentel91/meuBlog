@@ -1,12 +1,14 @@
 package br.edu.ifba.meublog.repositorios;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import br.edu.ifba.meublog.entidades.Usuario;
 
 public interface UsuarioRepository extends JpaRepository <Usuario, Long>{
-	
+	public List<Usuario> findByNomeContainingIgnoreCase(String name);
 }
 
 /*public class UsuarioRepository implements JpaRepository <Usuario, Long>{
